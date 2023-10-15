@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pyallama"
+version = "0.1.0"
+description = ""
+authors = ["Ed Fletcher <ed@discordrc.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+main = 'pyallama.main:main'
+pyallama = 'pyallama.main:main'
+process = 'pyallama.process:main'
+hs = 'pyallama.hellaswag:main'
+hellaswag = 'pyallama.hellaswag:main'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+aiohttp = "^3.8.5"
+chevron = "^0.14.0"
+mistune = "^3.0.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

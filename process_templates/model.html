@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            {{{ global_style }}}
+
+            .result {
+                margin-top: 6vh;
+                margin-bottom: 4vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="index">
+            <h2>Prompt:</h2>
+            <div>
+                <blockquote>
+                    <code>
+                        {{{ prompt }}}
+                    </code>
+                </blockquote>
+            </div>
+        </div>
+        <div>
+            <h2>Responses:</h2>
+            <ul>
+            {{#results}}
+                <li><a href="#{{ name }}">{{ name }}</a> ({{#response}}{{ tokens }}{{/response}} tokens)</li>
+            {{/results}}
+            </ul>
+        </div>
+        <hr />
+        <div>
+        {{#results}}
+            <div id="{{ name }}" class="result">
+                <a href="#{{ name }}">{{ name }}</a>: 
+                {{#response}}
+                {{ tokens }} tokens, {{ elapsed_ms }}ms elapsed ({{ ms_per_token }}ms/token)
+                <blockquote>
+{{{ response }}}
+                </blockquote>
+                {{/response}}
+                <a href="#index">(top)</a>
+            </div>
+        {{/results}}
+        </div>
+    </body>
+    <script data-goatcounter="https://alpaca.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</html>

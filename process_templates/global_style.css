@@ -1,0 +1,31 @@
+body {
+    background-color: #222224;
+    color: #eeeeec;
+    padding: 5vh 7vw 2vh 1vw;
+}
+
+a {
+    color: #e8e8b6;
+}
+
+a:hover {
+    color: #ffff6a;
+}
+
+a:visited {
+    color: #c0c095;
+}
+
+blockquote {
+    border-left: 1px solid #eeeeec;
+    padding-left: 10px;
+    background-color: #111113;
+    padding: 1vh 1vw 1vh 2vw;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+}
+
+pre {
+    max-width: 90%;
+    width: 90%;
+}
