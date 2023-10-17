@@ -36,6 +36,7 @@ def main():
                 print(e)
 
     index = {"reports": [], "global_style": global_style}
+    totals = {"tokens": 0, "reports": 0}
 
     for file_name, record in FILES.items():
         datetime = re.match(FILE_PATTERN, file_name).group(1)
@@ -49,6 +50,8 @@ def main():
             ),
             "global_style": global_style,
         }
+        totals["tokens"] += shared["total_tokens"]
+        totals["reports"] += 1
         index["reports"].append(
             {
                 **shared,
@@ -62,6 +65,7 @@ def main():
                 o.write(chevron.render(f, {**shared, **record}))
 
     index["reports"].sort(key=lambda e: e["datetime"], reverse=True)
+    index["totals"] = totals
     with open(f"{ROOT_DIR}/process_templates/index.html", "r") as f:
         with open(f"{ROOT_DIR}/process_output/index.html", "w") as o:
             o.write(chevron.render(f, index))

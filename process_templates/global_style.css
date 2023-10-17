@@ -28,4 +28,11 @@ blockquote {
 pre {
     max-width: 90%;
     width: 90%;
+    text-wrap: pretty;
+}
+
+table, tr, td {
+	border: 1px solid #fdfde9;
+	padding: 1vh 1vw 1vh 1vw;
+	margin: 1vh 1vw 1vh 1vw;
 }
